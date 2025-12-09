@@ -27,3 +27,6 @@ __all__ = [
     "phi_xor",
     "phi_nand",
 ]
+def tensor(v):
+    """Alias conveniente para crear un tensor T7."""
+    return T7Tensor(v)
