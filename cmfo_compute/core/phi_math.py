@@ -1,15 +1,20 @@
+"""
+Matemática φ esencial
+"""
+
 import numpy as np
 
-PHI = 1.6180339887498948
+PHI = (1 + 5 ** 0.5) / 2
 
-def phi_pow(n):
+
+def phi_pow(n: int) -> float:
     return PHI ** n
 
-def phi_weights():
-    # diag(φ^0, φ^-1, ..., φ^-6)
-    return np.diag([PHI**(-i) for i in range(7)])
 
-def phi_norm(v):
-    W = phi_weights()
-    v = np.array(v, dtype=np.float64)
-    return np.sqrt(v.T @ W @ v)
+def phi_weights() -> np.ndarray:
+    return np.diag([phi_pow(i) for i in range(7)])
+
+
+def phi_norm(v: np.ndarray) -> float:
+    w = phi_weights()
+    return float(np.sqrt(np.dot(v, w @ v)))
