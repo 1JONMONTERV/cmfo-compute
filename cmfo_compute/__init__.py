@@ -25,4 +25,3 @@ __all__ = [
     "phi_xor",
     "phi_nand",
 ]
-
