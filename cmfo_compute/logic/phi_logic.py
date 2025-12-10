@@ -1,5 +1,13 @@
 import numpy as np
 
+# =====================================================================
+# CMFO-COMPUTE - AVISO DE LICENCIA
+# Uso académico y personal permitido bajo Apache 2.0.
+# El uso comercial, corporativo o gubernamental requiere licencia CMFO.
+# Contacto comercial:
+#   Jonnathan Montero – San José, Costa Rica
+#   jmvlavacar@hotmail.com
+# =====================================================================
 
 def phi_sign(x):
     x = float(np.array(x).mean())
