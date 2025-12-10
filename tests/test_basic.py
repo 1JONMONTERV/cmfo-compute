@@ -6,7 +6,6 @@ def test_tensor_creation():
     assert t.v[0] == 1
 
 
-def test_evolution():
-    t = cmfo.tensor([1, 1, 1, 1, 1, 1, 1])
-    y = t.evolve(1)
-    assert len(y.v) == 7
+def test_tensor_evolve():
+    y = cmfo.evolve([1, 2, 3, 4, 5, 6, 7], 3)
+    assert isinstance(y.v[0], float)
