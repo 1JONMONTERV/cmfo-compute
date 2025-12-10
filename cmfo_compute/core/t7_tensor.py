@@ -1,16 +1,22 @@
 import numpy as np
-from .gamma_phi import gamma_step
 
 
 class T7Tensor:
+    """Tensor CMFO 7D con estructura φ-modal."""
+
     def __init__(self, v):
         self.v = np.array(v, dtype=float)
 
     def evolve(self, steps=1):
-        v = self.v.copy()
+        """Evolución CMFO básica."""
+        out = self.v.copy()
         for _ in range(steps):
-            v = gamma_step(v)
-        return T7Tensor(v)
+            out = np.tanh(out)
+        return T7Tensor(out)
 
     def norm(self):
+        """Norma φ-modal."""
         return float(np.linalg.norm(self.v))
+
+    def __repr__(self):
+        return f"T7Tensor({self.v})"
