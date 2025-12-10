@@ -11,7 +11,7 @@ def phi_and(a, b):
 
 
 def phi_or(a, b):
-    return phi_sign(a) if phi_sign(a) == 1.0 else phi_sign(b)
+    return phi_sign(a) if phi_sign(a) == 1 else phi_sign(b)
 
 
 def phi_not(a):
