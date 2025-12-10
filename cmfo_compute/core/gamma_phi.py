@@ -1,21 +1,7 @@
-"""
-Operador Γφ: rotación fractal sobre R7
-"""
-
 import numpy as np
+from .phi_math import phi_weights
 
-
-def gamma_step(v: np.ndarray) -> np.ndarray:
-    g = np.array(
-        [
-            [0, 1, 0, 0, 0, 0, 0],
-            [-1, 0, 0, 0, 0, 0, 0],
-            [0, 0,  1, 0, 0, 0, 0],
-            [0, 0, 0,  1, 0, 0, 0],
-            [0, 0, 0, 0,  1, 0, 0],
-            [0, 0, 0, 0, 0,  1, 0],
-            [0, 0, 0, 0, 0, 0,  1],
-        ],
-        dtype=float,
-    )
-    return g @ v
+def gamma_step(x):
+    x = np.array(x, dtype=float)
+    w = phi_weights(len(x))
+    return np.tanh(x * w)
