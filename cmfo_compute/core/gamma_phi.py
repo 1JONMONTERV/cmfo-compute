@@ -1,7 +1,7 @@
 import numpy as np
-from .phi_math import phi_weights
 
-def gamma_step(x):
-    x = np.array(x, dtype=float)
-    w = phi_weights(len(x))
-    return np.tanh(x * w)
+
+def gamma_step(v):
+    v = np.array(v, dtype=float)
+    g = np.sin(v) + np.cos(v)
+    return g
