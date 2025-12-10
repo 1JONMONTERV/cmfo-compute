@@ -24,4 +24,3 @@ def phi_xor(a, b):
 
 def phi_nand(a, b):
     return -phi_and(a, b)
-
